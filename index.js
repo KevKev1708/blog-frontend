@@ -6,7 +6,7 @@ let createElement = function (element, content) {
 
 //holt die Daten von dem Server mit dem Endpunkt "/blogs" "http://localhost:8080/blogs" und formatiert sie zu JSON und ruft dann die
 //Funktion buildPosts auf
-fetch('https://jsonplaceholder.typicode.com/posts')
+fetch('http://localhost:8080/blogs')
     .then(response => response.json())
     .then(buildPosts)
 //Funktion geht durch alle Daten und erstellt für jeden Post einen div-Container, h2 und p-Container und schreibt dort
@@ -26,7 +26,7 @@ function buildPosts(posts) {
             document.getElementById('authors').innerHTML = "";
             let loadingIndicator = createElement("div", "loading...");
             document.getElementById('authors').appendChild(loadingIndicator);
-            fetch('https://jsonplaceholder.typicode.com/users/' + userId)
+            fetch('http://localhost:8080/users/' + userId)
                 .then(response => response.json())
                 .then(buildAuthor)
         });
