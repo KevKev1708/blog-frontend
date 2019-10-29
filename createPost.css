@@ -1,0 +1,9 @@
+.warning {
+    border-color: red;
+}
+
+input,
+textarea,
+button {
+    display: block;
+}
