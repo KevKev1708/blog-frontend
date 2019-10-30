@@ -5,20 +5,19 @@ body {
 body #posts {
   width: 45%;
   display: inline-block;
-  background-color: #f7eed7;
+  background-color: white;
+  margin: 25px;
 }
 
 body .post {
   margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 
 body .post h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-transform: uppercase;
-}
-
-body .post p {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body #authors {

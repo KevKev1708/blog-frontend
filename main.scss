@@ -6,19 +6,18 @@ body {
   #posts {
     width: 45%;
     display: inline-block;
-    background-color: $background;
+    background-color: white;
+    margin: 25px;
   }
 
   .post {
     margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 
     h2 {
       font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
       text-transform: uppercase;
-    }
-
-    p {
-      font-family: Arial, Helvetica, sans-serif;
     }
   }
 
