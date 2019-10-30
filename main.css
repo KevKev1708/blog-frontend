@@ -1,38 +1,39 @@
-#posts{
-    width: 45%;
-    display: inline-block;
-    background-color: white;
+body {
+  background-color: #f7eed7;
 }
 
-.post>p{
-    font-family: Arial, Helvetica, sans-serif;
+body #posts {
+  width: 45%;
+  display: inline-block;
+  background-color: white;
 }
 
-.post>h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
-    text-transform: uppercase;
+body .post {
+  margin-bottom: 30px;
 }
 
-.post{
-    margin-bottom: 30px;
+body .post h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase;
 }
 
-#authors{
-    width: 50%;
-    position: fixed;
-    right: 0;
-    top: 0;
+body .post p {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.author>p{
-    font-family: Arial, Helvetica, sans-serif;
+body #authors {
+  width: 50%;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
-.name{
-    font-size: 20px;
-    font-weight: 600;
+body .author p {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-color: #f7eed7;
+body .author .name {
+  font-size: 20px;
+  font-weight: 600;
 }
+/*# sourceMappingURL=main.css.map */
