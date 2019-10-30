@@ -9,20 +9,25 @@ let createElement = function (element, content) {
 fetch('http://localhost:8080/blogs')
     .then(response => response.json())
     .then(buildPosts)
-//Funktion geht durch alle Daten und erstellt für jeden Post einen div-Container, h2 und p-Container und schreibt dort
+//Funktion geht durch alle Daten und erstellt für jeden Post einen div-Container, h6 und p-Container und schreibt dort
 //die Daten rein
 function buildPosts(posts) {
     posts.forEach(post => {
 
-        let div = createElement("div", "");
-        let h2 = createElement("h2", post.title);
+        let div = createElement("li", "");
+        let h6 = createElement("h6", post.title);
         let p = createElement("p", post.body);
+        let icon = createElement("i", "textsms");
         let userId = post.userId;
 
-        div.classList.add("post");
-        div.appendChild(h2);
-        h2.setAttribute('userId', userId);
-        h2.addEventListener('click', () => {
+        h6.classList.add("collapsible-header");
+        p.classList.add("collapsible-body");
+        icon.classList.add("material-icons");
+
+        h6.prepend(icon);
+        div.appendChild(h6);
+        h6.setAttribute('userId', userId);
+        h6.addEventListener('click', () => {
             document.getElementById('authors').innerHTML = "";
             let loadingIndicator = createElement("div", "loading...");
             document.getElementById('authors').appendChild(loadingIndicator);
@@ -54,3 +59,9 @@ function buildAuthor(author) {
     document.getElementById('authors').innerHTML = "";
     document.getElementById('authors').prepend(div);
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    let elems = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(elems);
+
+});
