@@ -1,41 +1,41 @@
 $background: #f7eed7;
 
-body{
-    background-color: $background;
+body {
+  background-color: $background;
 
-    #posts{
+  #posts {
     width: 45%;
     display: inline-block;
     background-color: $background;
-    }
+  }
 
-    .post{
+  .post {
     margin-bottom: 30px;
 
-    h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
-    text-transform: uppercase;
+    h2 {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      text-transform: uppercase;
     }
 
-    p{
-    font-family: Arial, Helvetica, sans-serif;
+    p {
+      font-family: Arial, Helvetica, sans-serif;
     }
-    }
+  }
 
-    #authors{
+  #authors {
     width: 50%;
     position: fixed;
     right: 0;
     top: 0;
-    }
+  }
 
-    .author{
-    p{
-    font-family: Arial, Helvetica, sans-serif;
+  .author {
+    p {
+      font-family: Arial, Helvetica, sans-serif;
     }
-    .name{
-    font-size: 20px;
-    font-weight: 600;
-        }
+    .name {
+      font-size: 20px;
+      font-weight: 600;
     }
+  }
 }
