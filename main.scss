@@ -1,10 +1,12 @@
+$background: #f7eed7;
+
 body{
-    background-color: #f7eed7;
+    background-color: $background;
 
     #posts{
     width: 45%;
     display: inline-block;
-    background-color: white;
+    background-color: $background;
     }
 
     .post{

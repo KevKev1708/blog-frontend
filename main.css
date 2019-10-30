@@ -5,7 +5,7 @@ body {
 body #posts {
   width: 45%;
   display: inline-block;
-  background-color: white;
+  background-color: #f7eed7;
 }
 
 body .post {
