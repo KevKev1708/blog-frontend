@@ -13,12 +13,12 @@ fetch('http://localhost:8080/blogs')
 //die Daten rein
 function buildPosts(posts) {
     posts.forEach(post => {
-
+        //Der folgende Code wird für jedes Element jeweils einmal ausgeführt
         let div = createElement("li", "");
         let h6 = createElement("h6", post.title);
         let p = createElement("p", post.body);
         let icon = createElement("i", "textsms");
-        let userId = post.userId;
+        let id = post.userId;
 
         h6.classList.add("collapsible-header");
         p.classList.add("collapsible-body");
@@ -26,12 +26,12 @@ function buildPosts(posts) {
 
         h6.prepend(icon);
         div.appendChild(h6);
-        h6.setAttribute('userId', userId);
+        h6.setAttribute('userId', id);
         h6.addEventListener('click', () => {
             document.getElementById('authors').innerHTML = "";
             let loadingIndicator = createElement("div", "loading...");
             document.getElementById('authors').appendChild(loadingIndicator);
-            fetch('http://localhost:8080/users/' + userId)
+            fetch('http://localhost:8080/users/' + id)
                 .then(response => response.json())
                 .then(buildAuthor)
         });
