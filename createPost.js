@@ -8,18 +8,45 @@ let button = q("knopf");
 let title = q("title");
 let body = q("body");
 let author = q("author");
+let dropdown = q("dropdown");
+
+
+fetch('http://localhost:8080/users', {
+    method: 'GET',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrer: 'no-referrer',
+})
+    .then(response => response.json())
+    .then(json => {
+        json.forEach(element => {
+            let option = document.createElement('option');
+            option.setAttribute('value', element.id);
+            option.innerText = element.Vorname + ' ' + element.Nachname;
+            dropdown.appendChild(option);
+        })
+    });
+
 
 //Variable "button" bekommt ein Event "click" mit anonymer Callback-Funktion,
 //welche nur auf Klick die Daten aus Eingabefeldern in die Datenbank schickt
 button.addEventListener('click', () => {
     let data = {};
 
+    let userId = dropdown.options[dropdown.selectedIndex].value;
+
+
     //Wenn in den jeweiligen Bereichen(Eingabefelder) etwas drinnen steht, dann werden diese an den Body übergeben
-    if (title.value && body.value && author.value) {
+    if (title.value && body.value) {
         data = {
             title: title.value.trim(),
             body: body.value.trim(),
-            author: author.value.trim()
+            userId
         }
     }
 
@@ -27,7 +54,6 @@ button.addEventListener('click', () => {
     //true ist, wenn das der Fall ist, wird der Ausdruck vor dem Doppelpunkt ausgeführt, wenn nicht der nach dem Doppelpunkt
     title.value ? title.classList.remove("warning") : title.classList.add("warning");
     body.value ? body.classList.remove("warning") : body.classList.add("warning");
-    author.value ? author.classList.remove("warning") : author.classList.add("warning");
     //schickt die Daten an den Server mit dem Endpunkt "/blogs" "http://localhost:8080/blogs" mit der POST-Methode
     fetch('http://localhost:8080/blogs', {
         method: 'POST',
