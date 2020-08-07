@@ -29,7 +29,7 @@ button.addEventListener('click', () => {
   lastn.value ? lastn.classList.remove("warning") : lastn.classList.add("warning");
   email.value ? email.classList.remove("warning") : email.classList.add("warning");
   //schickt die Daten an den Server mit dem Endpunkt "/users" "http://localhost:8080/users" mit der POST-Methode
-  fetch('http://localhost:8080/users', {
+  fetch(window.config.SERVER_URL + '/users', {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
