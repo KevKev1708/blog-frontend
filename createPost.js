@@ -11,7 +11,7 @@ let author = q("author");
 let dropdown = q("dropdown");
 
 
-fetch('http://localhost:8080/users', {
+fetch(window.config.SERVER_URL + '/users', {
     method: 'GET',
     mode: 'cors',
     cache: 'no-cache',
@@ -54,8 +54,8 @@ button.addEventListener('click', () => {
     //true ist, wenn das der Fall ist, wird der Ausdruck vor dem Doppelpunkt ausgeführt, wenn nicht der nach dem Doppelpunkt
     title.value ? title.classList.remove("warning") : title.classList.add("warning");
     body.value ? body.classList.remove("warning") : body.classList.add("warning");
-    //schickt die Daten an den Server mit dem Endpunkt "/blogs" "http://localhost:8080/blogs" mit der POST-Methode
-    fetch('http://localhost:8080/blogs', {
+    //schickt die Daten an den Server mit dem Endpunkt "/posts" "http://localhost:8080/posts" mit der POST-Methode
+    fetch(window.config.SERVER_URL + '/posts', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',

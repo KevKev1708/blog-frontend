@@ -4,9 +4,9 @@ let createElement = function (element, content) {
     return createdElement;
 }
 
-//holt die Daten von dem Server mit dem Endpunkt "/blogs" "http://localhost:8080/blogs" und formatiert sie zu JSON und ruft dann die
+//holt die Daten von dem Server mit dem Endpunkt "/posts" "http://localhost:8080/posts" und formatiert sie zu JSON und ruft dann die
 //Funktion buildPosts auf
-fetch('http://localhost:8080/blogs')
+fetch(window.config.SERVER_URL + '/posts')
     .then(response => response.json())
     .then(buildPosts)
 //Funktion geht durch alle Daten und erstellt für jeden Post einen div-Container, h6 und p-Container und schreibt dort
@@ -31,7 +31,7 @@ function buildPosts(posts) {
             document.getElementById('authors').innerHTML = "";
             let loadingIndicator = createElement("div", "loading...");
             document.getElementById('authors').appendChild(loadingIndicator);
-            fetch('http://localhost:8080/users/' + id)
+            fetch(window.config.SERVER_URL + '/users/' + id)
                 .then(response => response.json())
                 .then(buildAuthor)
         });
