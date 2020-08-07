@@ -1,5 +1,47 @@
+html, body {
+  font-family: sans-serif;
+}
+
 .warning {
   border-color: red;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.label {
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+.texte {
+  border-radius: 5px;
+  padding: 7px;
+  margin-left: 1em;
+}
+
+.dropdown {
+  width: 200px;
+  border-radius: 5px;
+  display: block;
+  margin-left: 1em;
+}
+
+.box {
+  width: 20em;
+  border:  2px solid;
+  border-radius: 1em 1em 1em 1em;
 }
 
 input,

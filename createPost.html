@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>createPost</title>
+    <script src="config.js" defer></script>
     <script src="createPost.js" defer></script>
     <link rel="stylesheet" type="text/css" href="createPost.css" />
 </head>
 
 <body>
-    <div id="posts"></div>
-    <label for="text">Titel ändern</label>
-    <input type="text" id="title" name="title">
-    <label for="text">Autor aussuchen</label>
-    <select for="dropdown" id="dropdown">
-    </select>
-    <div><label for="area">Text eingeben</label>
-        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+    <div class="box">
+        <div id="posts"></div>
+        <label for="text" class="label">Titel ändern</label>
+        <input type="text" id="title" name="title" class="texte" placeholder="Titel einfügen">
+        <label for="text" class="label">Autor aussuchen: </label>
+        <select for="dropdown" id="dropdown" class="dropdown">
+        </select>
+        <div><label for="area" class="label">Text eingeben</label>
+            <textarea name="body" id="body" cols="30" rows="10" class="texte" placeholder="Text eingeben"></textarea>
+        </div>
+        <button type="button" id="knopf" class="button">Blogeintrag hinzufügen</button>
     </div>
-
-    <label for="important">Important</label>
-    <input type="checkbox" name="important" id="important">
-    <button type="button" id="knopf">Text hinzufügen</button>
-
 </body>
 
 </html>
