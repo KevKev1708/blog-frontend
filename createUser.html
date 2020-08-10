@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>createUser</title>
+  <script src="config.js" defer></script>
   <script src="createUser.js" defer></script>
   <link rel="stylesheet" type="text/css" href="createUser.css" />
 </head>
@@ -13,12 +14,12 @@
 <body>
   <div class="box">
     <div class="texte">
-      <label for="text">Vorname des Autors</label>
-      <input type="text" id="firstn" name="firstn" class="input">
-      <label for="text">Nachname des Autors</label>
-      <input type="text" id="lastn" name="lastn" class="input">
-      <label for="text">Email des Autors</label>
-      <input type="text" id="email" name="email" class="input">
+      <label for="text" class="label">Vorname des Autors:</label>
+      <input type="text" id="firstn" name="firstn" class="input" placeholder="Vorname">
+      <label for="text" class="label">Nachname des Autors:</label>
+      <input type="text" id="lastn" name="lastn" class="input" placeholder="Nachname">
+      <label for="text" class="label">Email des Autors:</label>
+      <input type="text" id="email" name="email" class="input" placeholder="Email">
       <button type="button" id="knopf">Autor hinzufügen</button>
     </div>
   </div>
