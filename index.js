@@ -18,7 +18,9 @@ function buildPosts(posts) {
         let h6 = createElement("h6", post.title);
         let p = createElement("p", post.body);
         let icon = createElement("i", "textsms");
-        let id = post.userId;
+        let userId = post.userId;
+        let button = createElement("button", "Post löschen");
+        let id = post.id;
 
         h6.classList.add("collapsible-header");
         p.classList.add("collapsible-body");
@@ -26,16 +28,33 @@ function buildPosts(posts) {
 
         h6.prepend(icon);
         div.appendChild(h6);
-        h6.setAttribute('userId', id);
+        h6.setAttribute('userId', userId);
         h6.addEventListener('click', () => {
             document.getElementById('authors').innerHTML = "";
             let loadingIndicator = createElement("div", "loading...");
             document.getElementById('authors').appendChild(loadingIndicator);
-            fetch(window.config.SERVER_URL + '/users/' + id)
+            fetch(window.config.SERVER_URL + '/users/' + userId)
                 .then(response => response.json())
                 .then(buildAuthor)
         });
         div.appendChild(p);
+        button.addEventListener('click', () => {
+            fetch(window.config.SERVER_URL + '/posts/' + id, {
+                method: 'DELETE',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                referrer: 'no-referrer'
+            })
+                .then(response => {
+                    location.reload();
+                })
+        });
+        div.appendChild(button);
         //hier wird der erstellte div-Bereich an den schon bestehenden div-Bereich angeschoben
         document.getElementById('posts').prepend(div);
     })
