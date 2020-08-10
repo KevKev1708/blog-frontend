@@ -7,17 +7,13 @@ html, body {
 }
 
 .button {
-  background-color: black;
-  border: none;
+  background-color: rgb(48, 116, 241);
   color: white;
-  padding: 2px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-  margin-left: 1em;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem
 }
 
 .label {
@@ -29,6 +25,7 @@ html, body {
   border-radius: 5px;
   padding: 7px;
   margin-left: 1em;
+  margin-bottom: 1rem
 }
 
 .dropdown {
@@ -36,6 +33,7 @@ html, body {
   border-radius: 5px;
   display: block;
   margin-left: 1em;
+  margin-bottom: 1rem
 }
 
 .box {
